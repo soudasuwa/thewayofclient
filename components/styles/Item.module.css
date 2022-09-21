@@ -1,0 +1,29 @@
+.main {
+  display: grid;
+  grid-template-columns: 70px auto 50px;
+  margin-bottom: 8px;
+}
+
+.icon {
+  background-color: #fef7ea;
+  border-radius: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+.info {
+  border: solid 3px #ccc;
+  border-radius: 100%;
+  margin: 11px;
+  position: relative;
+}
+
+.info::after {
+  content: "i";
+  position: absolute;
+  left: 8.6px;
+  top: -0.7px;
+  font-size: 19px;
+  color: #ccc;
+  font-weight: bolder;
+}

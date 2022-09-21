@@ -1,9 +1,18 @@
+@font-face {
+  font-family: proximanova-regular;
+  src: url('/fonts/proxima-nova-regular.6fd2e98.woff2');
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: proximanova-regular, Arial, sans-serif;
+}
+
+body {
+  background-color: #f5f9fb;
+  color: #6b7192;
 }
 
 a {
@@ -13,6 +22,37 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.skeleton {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(-90deg, #f0f0f0 0%, #f8f8f8 50%, #f0f0f0 100%);
+  background-size: 400% 400%;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -135% 0%;
+  }
+}
+
+.skeleton.line {
+  width: 5em;
+  border-radius: 5px;
+}
+
+.skeleton.line::before {
+  content: "\00a0";
+}
+
+.skeleton.line.double {
+  width: 10em;
 }
 
 @media (prefers-color-scheme: dark) {

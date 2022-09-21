@@ -1,0 +1,13 @@
+.progress {
+  display: inline-flex;
+  gap: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.checkpoint {
+  background-color: #f6f8fb;
+  border-radius: 10px;
+  height: 11px;
+  flex-basis: 100%;
+}
