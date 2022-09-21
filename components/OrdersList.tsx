@@ -11,14 +11,11 @@ const OrdersList = ({ skeletonLength }: Props) => {
   const fetcher = (...args: any[]) => fetch(...args).then((res) => res.json())
   const { data, error } = useSWR<Definitions.Order[]>("/api/orders", fetcher)
 
-  if (data === undefined)
-    return (
-      <Iterator array={Array(skeletonLength).fill(null)}>
-        {() => <Order />}
-      </Iterator>
-    )
-
-  return <Iterator array={data}>{(order) => <Order order={order} />}</Iterator>
+  return (
+    <Iterator array={data || Array(skeletonLength).fill(undefined)}>
+      {(order) => <Order order={order} />}
+    </Iterator>
+  )
 }
 
 OrdersList.defaultProps = {
